@@ -1,0 +1,19 @@
+@model Customer
+@{
+    ViewData["Title"] = "Delete";
+
+<form method="post" asp-action="DeleteCustomer">
+    <label asp-for="cus_id"></label>: <input type="text" asp-for="cus_id" class="form-control" readonly>
+    <br>
+    <label asp-for="cus_name"></label>: <input type="text" asp-for="cus_name" class="form-control" readonly>
+    <br>
+    <label asp-for="cus_gender"></label>: <input type="text" asp-for="cus_gender" class="form-control" readonly>
+    <br>
+    <label asp-for="cus_birthday"></label>: <input type="date" id="" asp-for="cus_birthday" class="form-control" readonly>
+    <br>
+    <label asp-for="cus_address"></label>: <input type="text" asp-for="cus_address" class="form-control" readonly>
+    <br>
+    <input type="submit" value="Confirm" class="btn btn-outline-primary">
+</form>
+}
+<a asp-controller="Customer" asp-action="Index">Back To List</a>

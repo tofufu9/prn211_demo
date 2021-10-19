@@ -1,0 +1,33 @@
+@model Customer
+@{
+    ViewData["Title"] = "Create";
+}
+<form method="post" asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <label asp-for="cus_id"></label>: <input type="text" asp-for="cus_id" class="form-control">
+    <span asp-validation-for="cus_id" class="text-danger"></span>
+    <br>
+
+    <label asp-for="cus_name"></label>: <input type="text" asp-for="cus_name" class="form-control">
+    <span asp-validation-for="cus_name" class="text-danger"></span>
+    <br>
+
+    <label asp-for="cus_gender"></label>: <input type="radio" id="" asp-for="cus_gender" value="Male" >Male
+    <input type="radio" id="" asp-for="cus_gender" value="Female">Female
+    <span asp-validation-for="cus_gender" class="text-danger"></span>
+    <br>
+
+    <label asp-for="cus_birthday"></label>: <input type="date" id="" asp-for="cus_birthday" class="form-control">
+    <span asp-validation-for="cus_birthday" class="text-danger"></span>
+    <br>
+
+    <label asp-for="cus_address"></label>: <input type="text" asp-for="cus_address" class="form-control">
+    <span asp-validation-for="cus_address" class="text-danger"></span>
+    <br>
+
+    <input type="submit" value="Create" class="btn btn-success btn-lg">
+</form>
+
+@section Scripts{
+    @{<partial name = "_ValidationScriptsPartial"> </partial>}
+}

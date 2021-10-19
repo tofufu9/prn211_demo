@@ -1,0 +1,6 @@
+SELECT TOP (1000) [cus_id]
+      ,[cus_name]
+      ,[cus_gender]
+      ,[cus_birthday]
+      ,[cus_address]
+  FROM [PRN211].[dbo].[Customers]

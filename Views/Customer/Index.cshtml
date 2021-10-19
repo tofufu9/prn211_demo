@@ -1,0 +1,32 @@
+@model IEnumerable<Customer>
+@{
+    ViewData["Title"] = "Index";
+}
+<a class="btn btn-primary" asp-area="" asp-controller="Customer" asp-action="Create">Create New</a>
+<hr>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Birthday</th>
+        <th>Address</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model){
+            <tr>
+                <td>@obj.cus_id</td>
+                <td>@obj.cus_name</td>
+                <td>@obj.cus_gender</td>
+                <td>@obj.cus_birthday.ToShortDateString()</td>
+                <td>@obj.cus_address</td>
+                <td> <a asp-controller="Customer" asp-action="Update" asp-route-Id="@obj.cus_id" class="btn btn-success">Update</a> </td>
+                <td><a asp-controller="Customer" asp-action="Delete" asp-route-Id="@obj.cus_id" class="btn btn-danger">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
